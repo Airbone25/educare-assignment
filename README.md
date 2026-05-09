@@ -62,10 +62,10 @@ Allows users to add a new school to the database.
 **Request Body (JSON):**
 ```json
 {
-  "name": "Greenwood High School",
-  "address": "123 Schoolhouse Road, Education City",
-  "latitude": 40.7127,
-  "longitude": -74.0059
+  "name": "Delhi Public School",
+  "address": "Mathura Road, New Delhi, 110003",
+  "latitude": 28.5355,
+  "longitude": 77.2512
 }
 ```
 
@@ -76,10 +76,10 @@ Allows users to add a new school to the database.
   "message": "School added successfully",
   "data": {
     "id": 1,
-    "name": "Greenwood High School",
-    "address": "123 Schoolhouse Road, Education City",
-    "latitude": 40.7127,
-    "longitude": -74.0059
+    "name": "Delhi Public School",
+    "address": "Mathura Road, New Delhi, 110003",
+    "latitude": 28.5355,
+    "longitude": 77.2512
   }
 }
 ```
@@ -94,7 +94,7 @@ Fetches all schools in the system and sorts them dynamically based on their kilo
 - `longitude` (Float): The longitude of the user's location.
 
 **Example Request:**
-`GET http://localhost:3000/listSchools?latitude=40.7000&longitude=-74.0000`
+`GET http://localhost:3000/listSchools?latitude=10&longitude=50`
 
 **Success Response:**
 ```json
@@ -102,18 +102,18 @@ Fetches all schools in the system and sorts them dynamically based on their kilo
   "success": true,
   "message": "Schools retrieved and sorted by proximity",
   "user_location": {
-    "latitude": 40.7,
-    "longitude": -74
+    "latitude": 10,
+    "longitude": 50
   },
   "total": 1,
   "data": [
     {
       "id": 1,
-      "name": "Greenwood High School",
-      "address": "123 Schoolhouse Road, Education City",
-      "latitude": 40.7127,
-      "longitude": -74.0059,
-      "distance_km": 1.5
+      "name": "Delhi Public School",
+      "address": "Mathura Road, New Delhi, 110003",
+      "latitude": 28.5355,
+      "longitude": 77.2512,
+      "distance_km": 3509.23
     }
   ]
 }
