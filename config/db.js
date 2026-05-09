@@ -5,18 +5,19 @@ const pool = mysql.createPool({
   port: process.env.DB_PORT,
   user: process.env.DB_USER,
   password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME,
 })
 
 async function initializeDatabase() {
   const conn = await pool.getConnection();
   try {
-    await conn.query(
-      `CREATE DATABASE IF NOT EXISTS \`${process.env.DB_NAME}\``
-    )
+    // await conn.query(
+    //   `CREATE DATABASE IF NOT EXISTS \`${process.env.DB_NAME}\``
+    // )
 
-    await conn.query(
-      `USE \`${process.env.DB_NAME}\``
-    )
+    // await conn.query(
+    //   `USE \`${process.env.DB_NAME}\``
+    // )
 
     await conn.query(`
       CREATE TABLE IF NOT EXISTS schools (
