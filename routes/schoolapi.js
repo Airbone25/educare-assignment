@@ -15,6 +15,10 @@ function calDistances(lat1, lon1, lat2, lon2) {
     return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a))
 }
 
+router.get("/", (req, res) => {
+    res.send("School Management System")
+})
+
 router.post("/addSchool", addSchoolValidators, async (req, res) => {
     const { name, address, latitude, longitude } = req.body
 
